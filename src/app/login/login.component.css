@@ -1,0 +1,51 @@
+.main-div mat-card{
+    padding:0%;
+}
+.login-form{
+    padding: 10px;
+}
+.logoAcibadem{
+    width: 220px;
+    margin:0 auto;
+}
+.outer {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .inner {
+    width: 50%;
+  
+  }
+  .innerFormContainer{
+    margin: 28% auto 0 auto;
+    display: table;
+    width: 379px;
+  }
+  .innerFormContainer .formTitle{
+    text-align: left;
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+  .signInButton{
+    background-color: #18345E !important;
+    color:#fff;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border:none;
+    height: 44px;
+    font-size: 18px;
+    margin-top: 30px;
+  }
+
+  

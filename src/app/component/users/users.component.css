@@ -1,0 +1,104 @@
+.topBanner{
+    background-color: #18345E;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.topBanner .logoAcibadem{
+    float: left;
+    width: 270px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+.topBanner .logoutbutton{
+    float: right;
+    background-color: #fff;
+    color: #000;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 10px 31px;
+    border: none;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    margin-right: 15px;
+}
+.userTopHeader{
+    background-color: #D9D9D9;
+    padding: 15px 15px 15px 15px;
+    /*-webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;*/
+}
+.manager{
+    background-color: #16abd3;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+.userTopHeader .userPhotos{
+    width: 30%;
+    float:left;
+    padding: 0;
+}
+.userTopHeader .userPhotos .innerUserPhotos{
+    height: 90px;
+    width: 90px;
+    overflow: hidden;
+    margin: 0 auto;
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+    border-radius: 200px;
+}
+.userTopHeader .userShortInfo{
+    width: 70%;
+    float:left;
+    padding: 0 5px;
+}
+.userTopHeader .userShortInfo .userName{
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #000;
+    font-weight: 500;
+}
+.userTopHeader .userShortInfo .userMail{
+    font-size:11px;
+    line-height: 11px;
+    margin-bottom: 2px;
+    color:#3F3F3F;
+}
+.userTopHeader .userShortInfo .userPhone{
+    font-size:11px;
+    line-height:11px;
+    color:#3F3F3F;
+}
+.usersArea{
+    margin-top: 40px;
+}
+.users{
+    margin-bottom: 30px;
+    margin: 0 15px 0 15px;
+   
+}
+.extraInfoForUser{
+    background-color: #F5F5F5;
+    padding: 12px 15px;
+    border-bottom: 1px solid #E0E0E0;
+}
+.extraInfoForUser:last-child{
+    border: none;
+}
+.pdksLine{
+    background-color: #D9D9D9;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 3px 15px;
+    font-size:12px;
+    list-line:12px;
+    font-weight: 600;
+}
+.pdksLine:last-child{
+    border:none;
+}
+.userTopArea{
+    margin-bottom: 30px;
+}

@@ -1,0 +1,84 @@
+
+<div class="container-fluid topBanner">
+    <div class="row">
+        <div class="col-xs-6">
+            <img src="assets/images/logo.png" class="img-responsive logoAcibadem">
+        </div>
+        <div class="col-xs-6">
+            <button  type="submit" class="logoutbutton" (click)="logout()">Çıkış</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container usersArea">
+    <div class="row justify-content-md-center">
+        <div class="col-xs-4">
+
+        </div>
+        <div class="col-xs-4">
+            <div class="users topParent">
+                <div class="row userTopHeader manager">
+                    <div class="col-xs-4 userPhotos">  
+                        <div class="innerUserPhotos">                      
+                            <img  src="http://asgnettest.acibadem.com.tr/UserPhoto/default/image/{{userid}}" class=" img-responsive">
+                        </div>                   
+                    </div>
+                    <div class="col-xs-8 userShortInfo">
+                        <div class="userName">{{username}} {{soyad}}</div>
+                        <div class="userMail">{{eposta}}</div>
+                        <div class="userPhone">{{telno}}</div>
+                        <div class="userPhone">{{grupkodu}}</div>
+                        <div class="userPhone">{{sicilno}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+
+        </div>        
+    </div>
+</div>
+
+<div class="container usersArea">
+    <div class="row justify-content-md-center">
+
+        <div class="col-xs-4 userTopArea" *ngFor="let item of users">
+            <div class="users topParent">
+                <div class="row userTopHeader ">
+                    <div class="col-xs-4 userPhotos">  
+                        <div class="innerUserPhotos">                      
+                            <img  src="http://asgnettest.acibadem.com.tr/UserPhoto/default/image/{{item.id}}" class=" img-responsive">
+                        </div>                   
+                    </div>
+                    <div class="col-xs-8 userShortInfo">
+                        <div class="userName">{{item.name}} {{item.lastname}}</div>
+                        <div class="userMail">{{item.email}}</div>
+                        <div class="userPhone">{{telno}}</div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="extraInfoForUser">
+                <b>JIRA Madde Sayısı:</b> 12
+            </div>
+            <div class="extraInfoForUser">
+                <b>İzin Bakiyesi :</b> 5 gün
+            </div>
+           
+
+            <div class="pdksArea" >
+                <div *ngFor="let item of pdks" class="pdksLine">{{item.firsttime|date:'M/d/yy, HH:mm'}}-{{item.lasttime|date:'M/d/yy, HH:mm'}}</div>
+              
+            </div>
+            
+            
+        </div>
+
+
+
+
+        
+        
+    </div>
+</div>
