@@ -1,10 +1,18 @@
 export interface User {
+    id:number,
     name: string,
-    surname:string,
+    lastname:string,
     UserName:string,
     password:string,
+    jira:number,
     birthDate:Date,
-    phoneNumber:string,
+    telno:string,
     email:string,
-    photo:string
+    photo:string,
+    permit:number,
+    userid:number,
+    USER_ID:string
+    firsttime:Date,
+    lasttime:Date
+
 }

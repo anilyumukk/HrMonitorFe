@@ -1,6 +1,8 @@
 import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { map } from 'rxjs';
+import { User } from 'src/app/model/user.model';
 import { ApiservicesService } from 'src/app/services/apiservices.service';
 
 
@@ -13,16 +15,14 @@ export class UsersComponent {
 
 Id:any;
 pUsers:any;
-users:any;
+users!:User[];
 pdks:any;
-useridd:any;
 usersTimes:any;
-key:any;
-index:any;
 value:any;
-keyy:any;
 userpermit:any;
 permit:any;
+
+
 
 
 userid = localStorage.getItem('USERID')
@@ -39,7 +39,7 @@ telno=localStorage.getItem('TELNO')
 
   ngOnInit(): void {
     this.parentUser();
-    //this.UserTimes(2);
+   
        
   }  
 parentUser(){
@@ -52,56 +52,34 @@ return this.api.SelectedUserUnderList(body)
   
   this.users.forEach((key:any, index:any) => {
     this.usersTimes = this.api.SelectedUserPdks({P_PERSON_ID:key.id}).subscribe(res=>{
-      this.pdks=res.result;
-      console.log(this.pdks);
-    });   
+      this.pdks=res.result});
+  
+     
+     
      
 });
+
   this.users.forEach((keyy:any,value:any)=>{
-    console.log(value);
+    console.log(this.users)
     this.userpermit=this.api.GetUserPermits({USER_ID:keyy.id}).subscribe(res=>{
       this.permit=res.result;
-      console.log(this.permit);
-    })
-  })
-  
 
+      this.api.GetNumberOfUserItems(keyy.email).subscribe(res=>{
+           keyy.jira=res
+  
+      
+  });
+
+      
  
+  });
+ 
+  });
   
-  
+ 
 })}
 
-/*UserTimes(useridd:number){
-// let body={
-//   P_PERSON_ID:localStorage.getItem('USERID')
-// }
 
-let body={
-  P_PERSON_ID:useridd
-}
-return this.api.SelectedUserPdks(body).subscribe(res=>{
-  this.pdks=res.result;
-  console.log(this.pdks);
-})}*/
-
-// userPacs(){
-//   let a!: any;
-
-//   a = localStorage.getItem('P_PERSON_ID');
-
-//   console.log(a);
-//   let body={
-//     userpdks:parseFloat(a)   
-//   }
-//   console.log(body)
-//   console.log(localStorage.getItem('P_PERSON_ID'))
-
-//   return this.api.SelectedUserPdks(body)
-//   .subscribe(res=>{
-//     this.pdks=res.result;
-//     console.log(this.pdks);
-//   })
-// }
 logout(){
   this.router.navigateByUrl('');
   localStorage.removeItem('userName');

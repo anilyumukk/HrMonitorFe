@@ -25,4 +25,7 @@ export class ApiservicesService {
   GetUserPermits(body:any){
     return this.http.post<any>("https://localhost:7107/api/User/GetPermits",body)
   }
+  GetNumberOfUserItems(mail:string){
+    return this.http.get<any>("https://localhost:7107/api/User/GetNumberOfUserItems?mail="+mail)
+  }
 }
