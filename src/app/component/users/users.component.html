@@ -1,84 +1,84 @@
-
 <div class="container-fluid topBanner">
-    <div class="row">
-        <div class="col-xs-6">
-            <img src="assets/images/logo.png" class="img-responsive logoAcibadem">
-        </div>
-        <div class="col-xs-6">
-            <button  type="submit" class="logoutbutton" (click)="logout()">Çıkış</button>
-        </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <img src="assets/images/logo.png" class="img-responsive logoAcibadem" />
     </div>
+    <div class="col-xs-6">
+      <button type="submit" class="logoutbutton" (click)="logout()">
+        Çıkış
+      </button>
+    </div>
+  </div>
 </div>
 
-
-<div class="container usersArea">
-    <div class="row justify-content-md-center">
-        <div class="col-xs-4">
-
-        </div>
-        <div class="col-xs-4">
-            <div class="users topParent">
-                <div class="row userTopHeader manager">
-                    <div class="col-xs-4 userPhotos">  
-                        <div class="innerUserPhotos">                      
-                            <img  src="http://asgnettest.acibadem.com.tr/UserPhoto/default/image/{{userid}}" class=" img-responsive">
-                        </div>                   
-                    </div>
-                    <div class="col-xs-8 userShortInfo">
-                        <div class="userName">{{username}} {{soyad}}</div>
-                        <div class="userMail">{{eposta}}</div>
-                        <div class="userPhone">{{telno}}</div>
-                        <div class="userPhone">{{grupkodu}}</div>
-                        <div class="userPhone">{{sicilno}}</div>
-                    </div>
-                </div>
+<div class="container-fluid usersArea">
+  <div class="row justify-content-md-center">
+    <!-- <div class="col-xs-4">
+      <div class="users topParent">
+        <div class="row userTopHeader">
+          <div class="col-xs-4 userPhotos">
+            <div class="innerUserPhotos">
+              <img
+                src="http://asgnettest.acibadem.com.tr/UserPhoto/default/image/{{
+                  userid
+                }}"
+                class="img-responsive"
+              />
             </div>
+          </div>
+          <div class="col-xs-8 userShortInfo">
+            <div class="userName">{{ username }} {{ soyad }}</div>
+            <div class="userMail">{{ eposta }}</div>
+            <div class="userPhone">{{ telno }}</div>
+            <div class="userPhone">{{ grupkodu }}</div>
+            <div class="userPhone">{{ sicilno }}</div>
+          </div>
         </div>
-        <div class="col-xs-4">
+      </div>
+    </div> -->
 
-        </div>        
+    <div class="col-xs-3 userTopArea" *ngFor="let item of users">
+      <div class="users topParent">
+        <div class="row userTopHeader">
+          <div class="col-xs-4 userPhotos">
+            <div class="innerUserPhotos">
+              <img
+                src="http://asgnettest.acibadem.com.tr/UserPhoto/default/image/{{
+                  item.id
+                }}"
+                class="img-responsive"
+              />
+            </div>
+          </div>
+          <div class="col-xs-8 userShortInfo">
+            <div class="userName">{{ item.name }} {{ item.lastname }}</div>
+            <div class="userMail">{{ item.email }}</div>
+            <div class="userPhone">{{ item.telno }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="extraInfoForUser">
+        <b>JIRA Madde Sayısı: {{ item.jira }}</b>
+      </div>
+      <div class="extraInfoForUser">
+        <b>İzin Bakiyesi: {{ item.permit }}</b>
+      </div>
+      <mat-accordion>
+        <mat-expansion-panel *ngIf="item.pdks != undefined">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              PDKS: Giriş:{{
+                item.pdks[0].firsttime | date : "d/M/yy, HH:mm"
+              }}
+              - Çıkış: {{ item.pdks[0].lasttime | date : "d/M/yy, HH:mm" }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div *ngFor="let a of item.pdks" class="pdksLine">
+            Giriş: {{ a.firsttime | date : "d/M/yy, HH:mm" }} - Çıkış:
+            {{ a.lasttime | date : "d/M/yy, HH:mm" }}
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
     </div>
-</div>
-
-<div class="container usersArea">
-    <div class="row justify-content-md-center">
-
-        <div class="col-xs-4 userTopArea" *ngFor="let item of users">
-            <div class="users topParent">
-                <div class="row userTopHeader ">
-                    <div class="col-xs-4 userPhotos">  
-                        <div class="innerUserPhotos">                      
-                            <img  src="http://asgnettest.acibadem.com.tr/UserPhoto/default/image/{{item.id}}" class=" img-responsive">
-                        </div>                   
-                    </div>
-                    <div class="col-xs-8 userShortInfo">
-                        <div class="userName">{{item.name}} {{item.lastname}}</div>
-                        <div class="userMail">{{item.email}}</div>
-                        <div class="userPhone">{{item.telno}}</div>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="extraInfoForUser">
-                <b>JIRA Madde Sayısı:{{item.jira}}</b> 
-            </div>
-            <div class="extraInfoForUser">
-                <b>İzin Bakiyesi : 5 {{item.USER_ID}}</b> 
-            </div>
-           
-
-            <div class="pdksArea" >
-                <div *ngFor="let item of pdks" class="pdksLine">{{item.firsttime|date:'M/d/yy, HH:mm'}}-{{item.lasttime|date:'M/d/yy, HH:mm'}}</div>
-              
-            </div>
-            
-            
-        </div>
-
-
-
-
-        
-        
-    </div>
+  </div>
 </div>

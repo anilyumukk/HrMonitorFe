@@ -7,20 +7,17 @@ import { UsersComponent } from './component/users/users.component';
 import { HomeComponent } from './component/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import{FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
-
-
-
-
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -29,7 +26,6 @@ import { AuthGuard } from './auth.guard';
     UsersComponent,
     HomeComponent,
     LoginComponent,
-   
   ],
   imports: [
     BrowserModule,
@@ -41,12 +37,12 @@ import { AuthGuard } from './auth.guard';
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
-    BrowserAnimationsModule, 
-    FormsModule
-
+    BrowserAnimationsModule,
+    FormsModule,
+    MatExpansionModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}
